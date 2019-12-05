@@ -2,7 +2,7 @@ const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
 
-let computerPlay =function () {
+function computerPlay() {
     const computerNum = Math.random();
     if (computerNum <= (1/3)) {
         return 'Rock'
@@ -11,14 +11,16 @@ let computerPlay =function () {
     } else { 
         return 'Scissors'
     }
-}
+};
 
 let playerScore = 0
 let computerScore = 0
 
+
 function playRound(playerSelection, computerPlay) {
+    computerPlay = computerPlay();
     const player = playerSelection.toLowerCase();
-    const computer = computerPlay().toLowerCase();
+    const computer = computerPlay.toLowerCase();
 
     if (player === computer) {
         return 'Tie!';
@@ -60,13 +62,15 @@ function playRound(playerSelection, computerPlay) {
             }
         }
 
-    function game() {
-            rockButton.addEventListener('click', () => playRound('rock', computerPlay));
-            paperButton.addEventListener('click', () => playRound('paper', computerPlay));
-            scissorsButton.addEventListener('click', () => playRound('scissors', computerPlay));
-        }
+   
+   
+            rockButton.addEventListener('click', () => console.log(playRound('rock', computerPlay)));
+            paperButton.addEventListener('click', () => console.log(playRound('paper', computerPlay)));
+            scissorsButton.addEventListener('click', () => console.log(playRound('scissors', computerPlay)));
+      
+       
+        
 
-        console.log(game());
     
 
        // if (playerScore > computerScore) {
