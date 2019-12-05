@@ -1,4 +1,8 @@
-function computerPlay() {
+const rockButton = document.getElementById('rock');
+const paperButton = document.getElementById('paper');
+const scissorsButton = document.getElementById('scissors');
+
+let computerPlay =function () {
     const computerNum = Math.random();
     if (computerNum <= (1/3)) {
         return 'Rock'
@@ -12,9 +16,9 @@ function computerPlay() {
 let playerScore = 0
 let computerScore = 0
 
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerPlay) {
     const player = playerSelection.toLowerCase();
-    const computer = computerSelection.toLowerCase();
+    const computer = computerPlay().toLowerCase();
 
     if (player === computer) {
         return 'Tie!';
@@ -57,17 +61,16 @@ function playRound(playerSelection, computerSelection) {
         }
 
     function game() {
-        for (let i = 0; i < 5; i++) {
-
-            const player = prompt('Rock, Paper, or Scissors?')
-            const computer = computerPlay()
-
-            console.log(playRound(player, computer))
+            rockButton.addEventListener('click', () => playRound('rock', computerPlay));
+            paperButton.addEventListener('click', () => playRound('paper', computerPlay));
+            scissorsButton.addEventListener('click', () => playRound('scissors', computerPlay));
         }
-    }
 
-        if (playerScore > computerScore) {
-            console.log(`Player won with a score of ${playerScore}!`)
-        } else  {
-            console.log(`Computer won with a score of ${computerScore}!`)
-        }
+        console.log(game());
+    
+
+       // if (playerScore > computerScore) {
+         //   console.log(`Player won with a score of ${playerScore}!`)
+        //} else  {
+          //  console.log(`Computer won with a score of ${computerScore}!`)
+        //}
