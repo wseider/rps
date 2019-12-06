@@ -1,6 +1,10 @@
+//get button elements
 const rockButton = document.getElementById('rock');
 const paperButton = document.getElementById('paper');
 const scissorsButton = document.getElementById('scissors');
+
+//create scoreboard
+
 
 function computerPlay() {
     const computerNum = Math.random();
@@ -62,16 +66,18 @@ function playRound(playerSelection, computerPlay) {
             }
         }
 
-   
+            
    
             rockButton.addEventListener('click', () => console.log(playRound('rock', computerPlay)));
             paperButton.addEventListener('click', () => console.log(playRound('paper', computerPlay)));
             scissorsButton.addEventListener('click', () => console.log(playRound('scissors', computerPlay)));
+
+            
+
+
       
        
         
-
-    
 
        // if (playerScore > computerScore) {
          //   console.log(`Player won with a score of ${playerScore}!`)
