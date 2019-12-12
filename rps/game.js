@@ -84,7 +84,15 @@ function playRound(playerSelection, computerPlay) {
             scoreline.classList.add('scoreline');
             scoreline.textContent = 'Drumroll please!';
 
-            headline.appendChild(scoreline)
+            headline.appendChild(scoreline);
+
+            const scores = document.createElement('h3');
+            scores.classList.add('scores');
+            scores.textContent = `${computerScore} to ${playerScore}`;
+
+            scoreboard.appendChild(scores);
+
+
 
    
 
