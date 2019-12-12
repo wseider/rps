@@ -64,12 +64,14 @@ function playRound(playerSelection, computerPlay) {
             }
         }
 
-            
+            //create the events from clicks
    
-            rockButton.addEventListener('click', () => console.log(playRound('rock', computerPlay)));
-            paperButton.addEventListener('click', () => console.log(playRound('paper', computerPlay)));
-            scissorsButton.addEventListener('click', () => console.log(playRound('scissors', computerPlay)));
+            rockButton.addEventListener('click', () => scoreline.textContent = (playRound('rock', computerPlay)));
+            paperButton.addEventListener('click', () => scoreline.textContent = (playRound('paper', computerPlay)));
+            scissorsButton.addEventListener('click', () => scoreline.textContent = (playRound('scissors', computerPlay)));
 
+
+            //show the outputs below the saw guy
             const scoreboard = document.querySelector('#scoreboard');
 
             const headline = document.createElement('h2');
@@ -77,6 +79,14 @@ function playRound(playerSelection, computerPlay) {
             headline.textContent = 'Scoreboard!';
 
             scoreboard.appendChild(headline);
+
+            const scoreline = document.createElement('p');
+            scoreline.classList.add('scoreline');
+            scoreline.textContent = 'Drumroll please!';
+
+            headline.appendChild(scoreline)
+
+   
 
             
       
