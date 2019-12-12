@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+};
+
+
+
+img {
+    width: 790px;
+    height: 470px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#buttons {
+    text-align: center;
+}
+
+.button { 
+    margin: auto;
+    height: 150px;
+    width: 300px;
+    };
